@@ -1,0 +1,13 @@
+.smartfunnel {
+    list-style: none;
+    margin: 0;
+}
+
+.smartfunnel li {
+    text-align: center;
+    margin: 5px 0;
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: 2px solid white;
+    color: white;
+}
