@@ -39,15 +39,15 @@
 
         smartFunnel.draw = function() {
             var width = smartFunnel.$container.width();
-            var ratio;
+            var max;
 
             $.each(smartFunnel.settings.data, function(i, row) {
                 if (i == 0) {
-                    ratio = width / row.value;
+                    max = row.value;
                 }
 
-                var liWidth = row.value * ratio;
-                var liMargin = (width - liWidth) / 2
+                var liWidth = row.value / max * 100;
+                var liMargin = (100 - liWidth) / 2
 
                 var html = '<span>' + row.label + '</span>';
 
@@ -56,8 +56,8 @@
                 }
 
                 var $li = $('<li></li>').html(html).css({
-                    'width': liWidth,
-                    'margin-left': liMargin,
+                    'width': liWidth + '%',
+                    'margin-left': liMargin + '%',
                     'display': 'none',
                     'background-color': row.color || smartFunnel.settings.color
                 });
